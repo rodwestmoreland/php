@@ -10,7 +10,7 @@ if ( isset($_POST['$email']) && isset($_POST['$pass']) )
         else 
         {
             if(!filter_var($_POST['$email'], FILTER_VALIDATE_EMAIL))  // use built in email validate filter
-            {  $failure = $_POST['$email'] . " :: Email must have an at-sign (@)";  }
+            {  $failure = "Email must have an at-sign (@)";  }
                 else 
                 {
                     $salt = 'XyZzy12*_';
@@ -44,21 +44,6 @@ if ( isset($_POST['$email']) && isset($_POST['$pass']) )
                             }
                             
                         }
-                     
-
-                    // Redirect the browser to game.php
-                    //     header("Location: game.php?name=".urlencode($_POST['who']));
-                    //     return;
-                    // } else {
-                    //     $failure = "Incorrect password";
-                    // }
-
-
-                    // $sql begin...
-
-
-                     
-                    //stmt end ...
                 }// after ELSE $failure = $_POST['$email'] . " :: Email must have an at-sign (@)";
             }// ELSE $failure = "Email and password are required"
 } //main IF

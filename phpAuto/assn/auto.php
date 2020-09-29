@@ -16,32 +16,41 @@ $inserted   = "";
 
 if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['$miles']) ) 
 {
-    if ( strlen($_POST['$make']) < 1  )                                 { $failure = "Make is required"; }
-    if (!is_numeric($_POST['$year']) || !is_numeric($_POST['$miles']) ) { $failure = "Mileage and year must be numeric"; }
-    $sql = "INSERT INTO autos ( make, year, mileage) 
-                       VALUES ( :mk, :yr, :mi)";
-        
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(array(
-        ':mk' => $_POST['$make'],
-        ':yr' => $_POST['$year'],
-        ':mi' => $_POST['$miles'])  );
-        $stmt = $pdo->query("SELECT year, make, mileage FROM autos ORDER BY make");
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $inserted = " Record inserted";
-
-        echo('<table class="table"><tbody><tr></tr></tbody></table>');
-        echo('<table class="table"><tbody>');
-        foreach ( $rows as $row ) 
+    if ( strlen($_POST['$make']) <= 0  )                                 
+        { $failure = "Make is required";}
+    else 
+    {    
+        if (!is_numeric($_POST['$year']) || !is_numeric($_POST['$miles']) ) 
+            { $failure = "Mileage and year must be numeric"; }
+        else 
         {
-            echo'
-            <tr>
-            <td>'.$row['year'].'</td>
-            <td><a href="https://www.bing.com/images/search?q='.$row['year'].'+'.$row['make'].'+car+truck+suv" target="_blank">   
-                         <b><u>'.$row['make'].'</b></u></a></td>
-            <td>'.$row['mileage'].'</td>
-            </tr>';
+            
+            $sql = "INSERT INTO autos ( make, year, mileage) 
+                        VALUES ( :mk, :yr, :mi)";
+            
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+            ':mk' => $_POST['$make'],
+            ':yr' => $_POST['$year'],
+            ':mi' => $_POST['$miles'])  );
+            $stmt = $pdo->query("SELECT year, make, mileage FROM autos ORDER BY make");
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $inserted = " Record inserted";
+
+            echo('<table class="table"><tbody><tr></tr></tbody></table>');
+            echo('<table class="table"><tbody>');
+            foreach ( $rows as $row ) 
+            {
+                echo'
+                <tr>
+                <td>'.$row['year'].'</td>
+                <td><a href="https://www.bing.com/images/search?q='.$row['year'].'+'.$row['make'].'+car+truck+suv" target="_blank">   
+                            <b><u>'.$row['make'].'</b></u></a></td>
+                <td>'.$row['mileage'].'</td>
+                </tr>';
+            }
         }
+    }
 }
 
 echo('</tbody></table>');
