@@ -1,0 +1,7 @@
+{
+    "name": "rod/uom",
+    "description": "project files for U of Mich courses",
+    "require": {
+        "php": "^7.4"
+    }
+}

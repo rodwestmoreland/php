@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <link href="starter-template.css" rel="stylesheet">
+    </head>
+<body>
+
+    <div class="d-flex flex-column">
+    <div class="container order-2">
+    <div class="row">
+    <div class="col-md-12">
+        <ul class="list-inline">
+            <li style="width:50px">
+            1990
+            </li>
+            <li style="width:150px">
+            BMW
+            </li>
+            <li style="width:50px">
+            100,100
+            </li>        
+        </ul>
+    </div>
+    </div>
+    </div>
+
+
+<div class="container-fluid order-1">
+    <div class="col-12 col-md-9">
+    
+       <form method="POST">
+    <div class="card style=">
+        <div class="card-body">
+        <h2 class="card-title text-white bg-primary" style="padding:10px;">Tracking Autos for <?php echo $email ?></h2>
+        <div class="form-group-row">
+            <label for="id_make" class="col-md-2 col-form-label">Make             </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control"         name="$make"      id="id_make">  
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <br><br>
+        <div class="form-group-row" >
+            <label for="id_year" class="col-md-2 col-form-label">Year            </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control"          name="$year"    id="id_year"   placeholder="YYYY">
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <br/><br>
+        <div class="form-group-row" >
+
+            <label for="id_miles" class="col-md-2 col-form-label">Mileage         </label>
+            <div class="col-md-6">
+                <input type="text" class="form-control"          name="$miles"    id="id_miles">
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <br/><br>
+
+        <div class="form-group-row">
+            <div class="col-md-12">  
+                <input class="btn btn-primary"      type="submit" value="Add">  
+                <input class="btn btn-secondary"    type="submit" name= "cancel" value="Log Out">  
+            </div>
+        </div>
+        </div></div>
+    </form>
+    </div>
+    </div>
+</div>
+    </body>
+</html>
