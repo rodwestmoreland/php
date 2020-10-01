@@ -6,8 +6,8 @@ $password = 'os3w5819bl6dn8n5';
 $database = 'ymsl8bx8gct9al3i';  // cannot seem to create or rename db with free version of jawsdb - just imported backup into default db
 
  try {
-     $pdo = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
-     //$pdo = new PDO('mysql:host=localhost; port=3306; dbname=misc', 'rod', '');
+     //$pdo = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+     $pdo = new PDO('mysql:host=localhost; port=3306; dbname=misc', 'rod', 'W595@3829a');
      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      //echo "Connected successfully";
      }
