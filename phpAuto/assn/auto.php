@@ -98,6 +98,7 @@ echo('</tbody></table>');
             </div>
         </div>
         </div></div>
+        <input type="submit" name="add" value="add">
     </form>
     </div>
 </div>
