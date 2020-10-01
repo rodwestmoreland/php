@@ -27,7 +27,7 @@ if ( isset($_POST['who']) && isset($_POST['pass']) )
                     
                         //var_dump($row);
                         if ( $row === FALSE ) {
-                            echo "<h1>Login incorrect.</h1>\n";
+                            echo "<h1>Incorrect password.</h1>\n";
                             error_log("Login fail ".$_POST['who']." no HASH");
                         } else { 
                             if ( $check == $stored_hash ) 
@@ -39,7 +39,7 @@ if ( isset($_POST['who']) && isset($_POST['pass']) )
                                 
                             }
                             else {
-                                echo "<h1>Login incorrect.</h1>\n";
+                                echo "<h1>Incorrect password.</h1>\n";
                                 error_log("Login fail ".$_POST['who']." $check");
                             }
                             
