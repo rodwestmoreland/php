@@ -14,13 +14,13 @@ $email      = $_SESSION['email'] ;
 $failure    = "";
 $inserted   = "";
 
-if ( isset($_POST['make']) && isset($_POST['make']) && isset($_POST['mileage']) ) 
+if ( isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage']) ) 
 {
     if ( strlen($_POST['make']) <= 0  )                                 
         { $failure = "Make is required";}
     else 
     {    
-        if (!is_numeric($_POST['make']) || !is_numeric($_POST['mileage']) ) 
+        if (!is_numeric($_POST['year']) || !is_numeric($_POST['mileage']) ) 
             { $failure = "Mileage and year must be numeric"; }
         else 
         {
@@ -30,7 +30,7 @@ if ( isset($_POST['make']) && isset($_POST['make']) && isset($_POST['mileage']) 
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
             ':mk' => $_POST['make'],
-            ':yr' => $_POST['make'],
+            ':yr' => $_POST['year'],
             ':mi' => $_POST['mileage'])  );
             $stmt = $pdo->query("SELECT year, make, mileage FROM autos ORDER BY make");
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -58,7 +58,7 @@ if(isset($_POST['delete']))
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
             ':mk' => $_POST['make'],
-            ':yr' => $_POST['make'],
+            ':yr' => $_POST['year'],
             ':mi' => $_POST['mileage'])  );
             $stmt = $pdo->query("SELECT year, make, mileage FROM autos");
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
