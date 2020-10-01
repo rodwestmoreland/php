@@ -14,24 +14,23 @@ $email      = $_SESSION['email'] ;
 $failure    = "";
 $inserted   = "";
 
-if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['mileage']) ) 
+if ( isset($_POST['make']) && isset($_POST['make']) && isset($_POST['mileage']) ) 
 {
-    if ( strlen($_POST['$make']) <= 0  )                                 
+    if ( strlen($_POST['make']) <= 0  )                                 
         { $failure = "Make is required";}
     else 
     {    
-        if (!is_numeric($_POST['$year']) || !is_numeric($_POST['mileage']) ) 
+        if (!is_numeric($_POST['make']) || !is_numeric($_POST['mileage']) ) 
             { $failure = "Mileage and year must be numeric"; }
         else 
         {
-            
             $sql = "INSERT INTO autos ( make, year, mileage) 
                         VALUES ( :mk, :yr, :mi)";
             
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
-            ':mk' => $_POST['$make'],
-            ':yr' => $_POST['$year'],
+            ':mk' => $_POST['make'],
+            ':yr' => $_POST['make'],
             ':mi' => $_POST['mileage'])  );
             $stmt = $pdo->query("SELECT year, make, mileage FROM autos ORDER BY make");
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -52,7 +51,20 @@ if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['mileage']
         }
     }
 }
+if(isset($_POST['delete']))
+{
+    $sql = "DELETE FROM autos";
+            
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
+            ':mk' => $_POST['make'],
+            ':yr' => $_POST['make'],
+            ':mi' => $_POST['mileage'])  );
+            $stmt = $pdo->query("SELECT year, make, mileage FROM autos");
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $inserted = " Records removed";
 
+}
 echo('</tbody></table>');
 ?>
 
@@ -68,7 +80,7 @@ echo('</tbody></table>');
         <div class="form-group-row">
             <label for="id_make" class="col-md-2 col-form-label">Make             </label>
             <div class="col-md-6">
-                <input type="text" class="form-control"         name="$make"      id="id_make">  
+                <input type="text" class="form-control"         name="make"      id="id_make">  
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -76,7 +88,7 @@ echo('</tbody></table>');
         <div class="form-group-row" >
             <label for="id_year" class="col-md-2 col-form-label">Year            </label>
             <div class="col-md-6">
-                <input type="text" class="form-control"          name="$year"    id="id_year"   placeholder="YYYY">
+                <input type="text" class="form-control"          name="make"    id="id_year"   placeholder="YYYY">
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -99,6 +111,7 @@ echo('</tbody></table>');
         </div>
         </div></div>
         <input type="submit" name="Add" value="Add">
+        <input type="submit" name="delete" value="delete">
     </form>
     </div>
 </div>
