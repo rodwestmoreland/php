@@ -8,7 +8,7 @@ if ( ! isset($_GET['name']) || strlen($_GET['name']) < 1  ) {
             <div class="wrapper">
         ';
 
-isset( $_POST['cancel'] ) ?  header("Location: index.php") : null;
+isset( $_POST['logout'] ) ?  header("Location: index.php") : null;
 
 $email      = $_SESSION['email'] ;
 $failure    = "";
@@ -112,6 +112,7 @@ echo('</tbody></table>');
         </div></div>
         <input type="submit" name="Add" value="Add">
         <input type="submit" name="delete" value="delete">
+        <input type="submit" name="logout" value="logout">
     </form>
     </div>
 </div>
