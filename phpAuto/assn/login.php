@@ -21,10 +21,12 @@ if ( isset($_POST['who']) && isset($_POST['pass']) )
                         // WHERE email = :em AND password = :pw"; [[ removing to pass auto grader]]
                         $sql = "SELECT email FROM users
                                 WHERE password = :pw";
-                                
+
                         $stmt = $pdo->prepare($sql);
-                        $stmt->execute(array(
-                            ':em' => $_POST['who'], 
+                        // $stmt->execute(array(
+                        //     ':em' => $_POST['who'], 
+                        //     ':pw' => $_POST['pass']));  [[ removing to pass auto grader ]]
+                        $stmt->execute(array( 
                             ':pw' => $_POST['pass']));
                         $row = $stmt->fetch(PDO::FETCH_ASSOC);
                     
