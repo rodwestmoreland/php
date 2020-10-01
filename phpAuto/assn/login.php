@@ -85,7 +85,7 @@ if ( isset($_POST['who']) && isset($_POST['pass']) )
             </div>
         </div>
         </div></div>
-            <input type="submit" name="add" value="add">
+        <input type="submit" name="Add" value="Add">
     </form>
     </div>
 </div>
