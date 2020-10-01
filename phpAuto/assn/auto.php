@@ -14,13 +14,13 @@ $email      = $_SESSION['email'] ;
 $failure    = "";
 $inserted   = "";
 
-if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['$miles']) ) 
+if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['mileage']) ) 
 {
     if ( strlen($_POST['$make']) <= 0  )                                 
         { $failure = "Make is required";}
     else 
     {    
-        if (!is_numeric($_POST['$year']) || !is_numeric($_POST['$miles']) ) 
+        if (!is_numeric($_POST['$year']) || !is_numeric($_POST['mileage']) ) 
             { $failure = "Mileage and year must be numeric"; }
         else 
         {
@@ -32,7 +32,7 @@ if ( isset($_POST['$make']) && isset($_POST['$year']) && isset($_POST['$miles'])
             $stmt->execute(array(
             ':mk' => $_POST['$make'],
             ':yr' => $_POST['$year'],
-            ':mi' => $_POST['$miles'])  );
+            ':mi' => $_POST['mileage'])  );
             $stmt = $pdo->query("SELECT year, make, mileage FROM autos ORDER BY make");
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $inserted = " Record inserted";
@@ -85,7 +85,7 @@ echo('</tbody></table>');
 
             <label for="id_miles" class="col-md-2 col-form-label">Mileage         </label>
             <div class="col-md-6">
-                <input type="text" class="form-control"          name="$miles"    id="id_miles">
+                <input type="text" class="form-control"          name="mileage"    id="id_miles">
             </div>
             <div class="col-md-4"></div>
         </div>
@@ -98,7 +98,7 @@ echo('</tbody></table>');
             </div>
         </div>
         </div></div>
-        <input type="submit" name="add" value="add">
+        <input type="submit" name="Add" value="Add">
     </form>
     </div>
 </div>

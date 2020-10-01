@@ -38,10 +38,10 @@ if ( isset($_POST['who']) && isset($_POST['pass']) )
                                 header("Location: auto.php?name=".urlencode($_POST['who'])); exit;
                                 
                             }
-                            else {
-                                echo "<h1>Incorrect password.</h1>\n";
-                                error_log("Login fail ".$_POST['who']." $check");
-                            }
+                            // else {
+                            //     echo "<h1>Incorrect password.</h1>\n";
+                            //     error_log("Login fail ".$_POST['who']." $check");
+                            // }
                             
                         }
                 }// after ELSE $failure = $_POST['who'] . " :: Email must have an at-sign (@)";
