@@ -1,0 +1,159 @@
+$bg-dark: #00334d; // nav
+$bg-theme: #006699; // theme prime color
+$bg-header:#000; //hi contrast for logo
+$foot-headers-color:#2478a1; // footer font low contrast
+$subtle-white: floralwhite; //subdued white
+$hi-white:#fff; // white high contrast
+$lt-gray: #ddd; // lt gray
+$test-blk: #000;
+
+
+$carousel-item-height:300px;
+
+@mixin zero-margin($pad-up-dn:0px, $pad-l-r:0px) {
+    margin: auto;
+    padding: $pad-up-dn $pad-l-r;
+}
+.modal-header{
+    background-color:   $bg-dark;
+    color:              $subtle-white;
+    .close{
+        color:$subtle-white;
+    }
+}
+
+.modal-body{
+    background-color: $subtle-white;
+}
+
+.modalButton{
+    background-color:   $bg-theme;
+    color:              $subtle-white
+}
+.carousel {
+    background: $bg-theme;
+
+    .carousel-item {
+        height: $carousel-item-height;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+        }
+    }
+}
+
+#carouselButton {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 1;
+}
+
+
+body {
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+
+}
+
+.navbar-dark {
+    background-color: $bg-dark;
+}
+
+.breadcrumb {
+    background-color: $subtle-white;
+}
+
+.jumbotron {
+    @include zero-margin(70px, 30px);
+    background-color: $bg-header;
+    color: $subtle-white;
+}
+
+.carousel {
+    background: $bg-theme;
+}
+
+.carousel-item {
+    height: 300px;
+}
+
+.carousel-caption {
+    bottom: 50px;
+    text-align: left;
+    margin-left: 10em;
+}
+
+.carousel-indicators ol {
+    margin-left: 50em;
+}
+
+.carousel-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 300px;
+}
+
+#carouselButton {
+    right: 0px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 10;
+}
+
+.card-header {
+    background-color: $bg-theme;
+    color: $subtle-white;
+}
+
+.tab-content {
+    border-left: 1px solid $lt-gray;
+    border-right: 1px solid $lt-gray;
+    border-bottom: 1px solid $lt-gray;
+    padding: 10px;
+}
+
+.thead-blue {
+    background-color: $bg-theme;
+    color: $subtle-white;
+}
+
+.row-header {
+    @include zero-margin();
+}
+
+.row-content {
+    @include zero-margin(50px, 0px);
+    border-bottom: 1px ridge;
+    border-bottom-color: $lt-gray;
+    min-height: 400px;
+}
+
+.bottom-border {
+    border-bottom: none;
+}
+
+.footer {
+    background-color: $bg-dark;
+    color: $foot-headers-color;
+    @include zero-margin(20px, 0px);
+}
+
+.footer a {
+    color: $hi-white;
+}
+
+.address {
+    font-size: 80%;
+    margin: 0px;
+    color: $hi-white;
+}
+
+#Copyright {
+    color: $hi-white;
+    padding-top: 10px;
+}
