@@ -94,7 +94,8 @@
                    <h5>projects</h5>
                 <div class="row">
                     <ul>
-                        <li><a href="/phpAutos/assn/index.php">Auto Tracker</a></li>
+                        <li><a href="/phpAuto/assn/index.php">Auto Tracker</a></li>
+                                      
                     </ul>
                 </div>
                     
