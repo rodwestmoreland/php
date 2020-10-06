@@ -3,9 +3,9 @@
       include(__DIR__.'/inc/pdo.php');  
       include(__DIR__.'/inc/logout.php');
                
-if ( isset($_POST['account']) && isset($_POST['pass']) ) 
+if ( isset($_POST['email']) && isset($_POST['pass']) ) 
 {   
-    if(!empty($_POST['account']) && !filter_var($_POST['account'], FILTER_VALIDATE_EMAIL)) 
+    if(!empty($_POST['email']) && !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) 
       {$_SESSION['status'] = "Email must have an at-sign (@)"; }
         else  {
             include(__DIR__.'/inc/checkHash.php');
@@ -17,7 +17,7 @@ if ( isset($_POST['account']) && isset($_POST['pass']) )
                 return;
             } else {
                 if ( $check == $stored_hash ) {
-                $_SESSION['account'] = $_POST['account']; 
+                $_SESSION['account'] = $_POST['email']; 
                 $_SESSION['status'] = '<p style="color: green;">Login accepted</p>';
                 header('Location: view.php');
                 return;
@@ -43,7 +43,7 @@ if ( isset($_POST['account']) && isset($_POST['pass']) )
         <div class="form-group-row">
             <label for="nam" class="col-md-2 col-form-label">   Email          </label>
             <div class="col-md-6">
-                <input type="text" class="form-control"         name="account"      id="nam">  
+                <input type="text" class="form-control"         name="email"      id="nam">  
             </div>
             <div class="col-md-4"></div>
         </div>

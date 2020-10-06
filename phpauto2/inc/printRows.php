@@ -1,5 +1,5 @@
 <?php
-
+if(isset($_SESSION['make'])){
 foreach ( $rows as $row ) 
 {
     echo'
@@ -11,5 +11,9 @@ foreach ( $rows as $row )
     </tr>';
 
 }
+} 
+// else {
+//     echo "ROWS not set";
+//}
 
 ?>
