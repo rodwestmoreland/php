@@ -1,13 +1,19 @@
 <?php   include(__DIR__.'/inc/head.php');           include(__DIR__.'/inc/pdo.php'); 
         include(__DIR__.'/inc/accountCheck.php');   include(__DIR__.'/inc/delete.php');
         
-
         echo'<body>  <div class="container">  <div class="wrapper">';
-
+        if (isset( $_POST['cancel'] ) ) {   
+            header('Location: view.php');
+            return;
+        }
 $inserted   = "";
-
+$failure    = "";
 if ( isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage']) ) 
 {
+    $_SESSION['make']   =  $_POST['make'];
+    $_SESSION['year']   =  $_POST['year'];
+    $_SESSION['mileage']=  $_POST['mileage'];
+    include(__DIR__.'/inc/sqlAdd.php');
     if ( strlen($_POST['make']) <= 0  )                                 
         { $failure = "Make is required";}
     else 
@@ -15,16 +21,13 @@ if ( isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage']) 
         if (!is_numeric($_POST['year']) || !is_numeric($_POST['mileage']) ) 
             { $failure = "Mileage and year must be numeric"; }
         else 
-        {
-            $_SESSION['make'] =  $_POST['make'];
-            $_SESSION['year'] =     $_POST['year'];
-            $_SESSION['mileage'] =  $_POST['mileage'];
+        {        
             header('Location: view.php');
             return;
         }
     }
 }
-echo('</tbody></table>');
+
 
 ?> <!-- View -------------------------------------------- -->
 
@@ -65,8 +68,8 @@ echo('</tbody></table>');
 
         <div class="form-group-row">
             <div class="col-md-12">  
-                <input class="btn btn-primary btn-width"      type="submit" value="Add">  
-                <input class="btn btn-secondary btn-width"    type="submit" name= "cancel" value="Log Out">  
+                <input class="btn btn-primary btn-width"      type="submit" name= "insert" value="Insert">  
+                <input class="btn btn-secondary btn-width"    type="submit" name= "cancel" value="Cancel">  
                 <input class="btn btn-danger btn-width"       type="submit" name= "delete" value="Delete ALL">  
             </div>
         </div>

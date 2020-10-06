@@ -5,9 +5,9 @@ if(isset($_POST['delete']))
             
             $stmt = $pdo->prepare($sql);
             $stmt->execute(array(
-            ':mk' => $_POST['make'],
-            ':yr' => $_POST['year'],
-            ':mi' => $_POST['mileage'])  );
+            ':mk' => $_SESSION['make'],
+            ':yr' => $_SESSION['year'],
+            ':mi' => $_SESSION['mileage'])  );
             $stmt = $pdo->query("SELECT year, make, mileage FROM autos");
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
             $inserted = " Records removed";

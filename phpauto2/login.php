@@ -60,7 +60,7 @@ if ( isset($_POST['email']) && isset($_POST['pass']) )
             <div class="col-md-12">  
             <br/><br>
                 <input class="btn btn-primary btn-width"   type="submit" value="Log In">  
-                <input class="btn btn-secondary btn-width" type="submit" name= "cancel" value="cancel">  
+                <input class="btn btn-secondary btn-width" type="submit" name= "logout" value="cancel">  
             </div>
         </div>
         </div>
