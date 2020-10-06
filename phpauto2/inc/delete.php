@@ -1,16 +1,17 @@
 <?php 
 if(isset($_POST['delete']))
 {
-    $sql = "DELETE FROM autos";
-            
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute(array(
-            ':mk' => $_SESSION['make'],
-            ':yr' => $_SESSION['year'],
-            ':mi' => $_SESSION['mileage'])  );
-            $stmt = $pdo->query("SELECT year, make, mileage FROM autos");
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $inserted = " Records removed";
+    $sqlDelete = "DELETE FROM autos";
+        $pdoDelete = $pdo->prepare($sqlDelete);
+        $pdoDelete->execute(array(
+        ':mk' => $_SESSION['make'],
+        ':yr' => $_SESSION['year'],
+        ':mi' => $_SESSION['mileage'])  );
+        include(__DIR__.'/sqlQuery.php');
+        $_SESSION['status'] = " Records removed";
 
+        header('Location: view.php');
+        return;
 }
+
 ?>

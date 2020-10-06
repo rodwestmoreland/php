@@ -2,7 +2,7 @@
         include(__DIR__.'/inc/accountCheck.php'); 
         include(__DIR__.'/inc/logout.php');
         if (isset( $_POST['add'] ) ) {
-            header('Location: auto.php');
+            header('Location: add.php');
             return;
         }
         
@@ -26,7 +26,7 @@
         </div>
         </div>
         <div class="hideButtons"> 
-            <a href="view.php">Add New</a>
+            <a href="add.php">Add New</a>
             <a href="login.php">Logout</a>
         </div>
     </div>

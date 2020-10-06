@@ -2,9 +2,9 @@
         include(__DIR__.'/inc/accountCheck.php');   include(__DIR__.'/inc/delete.php');
         
         echo'<body>  <div class="container">  <div class="wrapper">';
-        if (isset( $_POST['cancel'] ) ) {   
-            header('Location: view.php');
-            return;
+         if (isset( $_POST['cancel'] ) ) {   
+             header('Location: view.php');
+             return;
         }
 $inserted   = "";
 $failure    = "";

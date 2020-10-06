@@ -10,8 +10,8 @@ $locUser  = 'rod';
 $locDb    = 'misc';
  try {
      //$pdo = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
-     //$pdo = new PDO("mysql:host=localhost; port=3306; dbname=$locDb", $locUser, 'W595@3829a');
-     $pdo = new PDO("mysql:host=localhost; port=3306; dbname=$rodwDb", $rodwUser, 'W595@3829a');
+     $pdo = new PDO("mysql:host=localhost; port=3306; dbname=$locDb", $locUser, 'W595@3829a');
+     //$pdo = new PDO("mysql:host=localhost; port=3306; dbname=$rodwDb", $rodwUser, 'W595@3829a');
      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
      //echo "Connected successfully";
      }
