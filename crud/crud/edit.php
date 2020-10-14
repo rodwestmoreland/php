@@ -25,8 +25,7 @@ if ( isset($_POST['make'])  && isset($_POST['model'])
             ':make' =>      $_POST['make'],
             ':model' =>     $_POST['model'],
             ':mileage' =>   $_POST['mileage'],
-            ':year' =>      $_POST['year'],
-            ':auto_id' =>      $_POST['auto_id']));
+            ':year' =>      $_POST['year']));
 
             $_SESSION['status'] = 'Record Added';
             header( 'Location: index.php' ) ;
@@ -60,7 +59,7 @@ $mileage =  htmlentities($row['mileage']);
 $auto_id =  $row['auto_id'];
 ?>
 
-<h2>Editing Auto</h2>
+<p>Edit Auto</p>
 <form method="post">
 
     <p>Make:    <input type="text" name="make"     value="<?= $make ?>"> </p>

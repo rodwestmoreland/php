@@ -37,9 +37,9 @@ if ( isset($_POST['email']) && isset($_POST['pass']) )
     <form method="POST">
     <div class="card style=">
         <div class="card-body">
-        <h2 class="card-title text-white bg-primary" style="padding:10px;">Auto Database Login</h2>
+        <h2 class="card-title text-white bg-primary" style="padding:10px;">Please Log in</h2>
         <div class="form-group-row">
-            <label for="nam" class="col-md-2 col-form-label">   Email          </label>
+            <label for="nam" class="col-md-2 col-form-label">   Username          </label>
             <div class="col-md-6">
                 <input type="text" class="form-control"         name="email"      id="nam">  
             </div>
