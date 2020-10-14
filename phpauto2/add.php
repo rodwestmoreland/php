@@ -78,10 +78,6 @@ if ( isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage']) 
     </form>
     </div>
 </div>
-<div class="hideButtons"> 
-    <input type="submit" id="hide1" name="Add" value="Add">
-    <input type="submit" name="delete" value="Delete">
-    <input class="hideButtons" type="submit" name="logout" value="logout">
-</div>
+
 </body>
 </html>

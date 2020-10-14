@@ -25,10 +25,7 @@
             </div>
         </div>
         </div>
-        <div class="hideButtons"> 
-            <a href="add.php">Add New</a>
-            <a href="login.php">Logout</a>
-        </div>
+
     </div>
         
     </form>

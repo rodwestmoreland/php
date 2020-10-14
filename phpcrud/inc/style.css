@@ -1,0 +1,40 @@
+body {
+  padding-top: 50px;
+  
+  
+}
+pre{
+  max-width: 63rem;
+  margin-bottom: 30px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.wrapper {
+  width: 100%;
+  display: table;
+}
+
+.first-row {
+  display: table-row-group;
+}
+
+.second-row {
+  display: table-header-group;
+}
+
+#hide1
+{    
+  display: none;
+  
+}
+
+.hideButtons
+{    
+  display: none;
+
+}
+.btn-width{
+  width:120px !important;
+}
