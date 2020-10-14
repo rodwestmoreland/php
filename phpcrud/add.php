@@ -7,7 +7,7 @@ if ( isset($_POST['make'])  && isset($_POST['model'])
 &&   isset($_POST['year'])  && isset($_POST['mileage'])) {
 
     if ( strlen($_POST['make']) < 1 || strlen($_POST['model']) < 1) {
-        $_SESSION['status'] = 'Missing data';
+        $_SESSION['status'] = 'All values are required';
         header("Location: add.php");
         return;
     }
@@ -35,3 +35,8 @@ require __DIR__.'/inc/sessionStatus.php';
     <p><input type="submit" value="Add New"/>
     <a href="index.php">Cancel</a></p>
 </form>
+</div>
+</div>
+
+</body>
+</html>
