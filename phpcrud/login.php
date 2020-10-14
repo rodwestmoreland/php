@@ -1,4 +1,5 @@
-<?php   session_start(); 
+<?php   session_start();
+        require(__DIR__.'/inc/head.php');
         require(__DIR__.'/inc/pdo.php');  
     
 if ( isset($_POST['email']) && isset($_POST['pass']) ) 

@@ -1,4 +1,5 @@
 <?php   session_start();
+        require __DIR__.'/inc/head.php';
         require __DIR__.'/inc/pdo.php';
         require __DIR__.'/inc/checkLogin.php';
 

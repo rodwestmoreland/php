@@ -2,7 +2,8 @@
         require __DIR__.'/inc/pdo.php';
 
    echo '
-   <table border="1">'."\n
+   
+   <table class="table">'."<tbody>
    <tr>
         <td>Make        </td>
         <td>Model       </td>
