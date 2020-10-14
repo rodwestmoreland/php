@@ -70,7 +70,7 @@ $auto_id =  $row['auto_id'];
 
                 <input type="hidden" name="auto_id" value="<?= $auto_id ?>">
 <p>
-    <input type="submit"                value="Update"/>
+    <input type="submit"                value="Save"/>
     
     <a href="index.php">                        Cancel</a>
 </p>
