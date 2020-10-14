@@ -9,8 +9,5 @@ $stmt->execute(array(
 ':mileage' =>   $_POST['mileage'],
 ':year' =>      $_POST['year']));
 
-$_SESSION['status'] = 'Record Added';
-header( 'Location: index.php' ) ;
-return;
 
 ?>

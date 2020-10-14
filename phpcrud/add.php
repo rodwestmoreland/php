@@ -19,6 +19,10 @@ if ( isset($_POST['make'])  && isset($_POST['model'])
     }
 
         require __DIR__.'/inc/sqlAdd.php';    
+        
+        $_SESSION['status'] = 'Record added';
+        header( 'Location: index.php' ) ;
+        return;
 }
 
 // Flash pattern

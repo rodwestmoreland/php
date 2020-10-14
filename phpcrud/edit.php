@@ -28,7 +28,7 @@ if ( isset($_POST['make'])  && isset($_POST['model'])
             ':year' =>      $_POST['year'],
             ':auto_id' =>      $_POST['auto_id']));
 
-            $_SESSION['status'] = 'Record Added';
+            $_SESSION['status'] = 'Record added';
             header( 'Location: index.php' ) ;
             return;
 }

@@ -1,6 +1,6 @@
-<?php
+<?php   
         require __DIR__.'/inc/pdo.php';
-
+        
    echo '
    
    <table class="table">'."<tbody>
